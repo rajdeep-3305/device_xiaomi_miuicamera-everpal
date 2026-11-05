@@ -1,0 +1,9 @@
+# All blobs below are extracted from evergo OS1.0.1.0.TGBINXM
+# (HyperOS 1, Android 13).
+
+product/priv-app/MiuiCamera/MiuiCamera.apk
+system/lib64/libcamera_algoup_jni.xiaomi.so
+system/lib64/libcamera_ispinterface_jni.xiaomi.so
+system/lib64/libcamera_mianode_jni.xiaomi.so
+system/lib64/libmtkisp_metadata_sys.so
+system/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so
