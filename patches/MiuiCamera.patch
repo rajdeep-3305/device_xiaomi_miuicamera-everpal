@@ -441,3 +441,15 @@
      return-void
  .end method
 
+--- a/smali_classes2/com/mi/device/Evergreen.smali
++++ b/smali_classes2/com/mi/device/Evergreen.smali
+@@ -300,7 +300,7 @@
+ .method public o000oOoO()I
+     .locals 0
+ 
+-    const/4 p0, 0x1
++    const/4 p0, 0x2
+ 
+     return p0
+ .end method
+ 
