@@ -9,6 +9,9 @@ $(call inherit-product, vendor/xiaomi/miuicamera-everpal/miuicamera-everpal-vend
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-miuicamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-miuicamera.xml
 
+PRODUCT_PACKAGES += \
+    MiuiCameraIconOverlay
+
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
