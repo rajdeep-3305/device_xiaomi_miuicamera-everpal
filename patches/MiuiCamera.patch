@@ -453,3 +453,96 @@
      return p0
  .end method
  
+
+--- a/smali_classes2/com/android/camera2/CameraCapabilities.smali
++++ b/smali_classes2/com/android/camera2/CameraCapabilities.smali
+@@ isSupportCvType()Z
+-.method public isSupportCvType()Z
+-    .locals 1
+-    sget-object v0, Lcom/android/camera2/vendortag/CaptureRequestVendorTags;->CV_SESSIONKEY_TYPE:Lcom/android/camera2/vendortag/VendorTag;
+-    invoke-virtual {v0}, Lcom/android/camera2/vendortag/VendorTag;->getName()Ljava/lang/String;
+-    move-result-object v0
+-    invoke-virtual {p0, v0}, Lcom/android/camera2/CameraCapabilities;->isTagDefined(Ljava/lang/String;)Z
+-    move-result p0
+-    return p0
++.method public isSupportCvType()Z
++    .locals 0
++    const/4 p0, 0x1
++    return p0
+ .end method
+
+--- a/smali_classes2/com/android/camera2/compat/theme/common/MiThemeOperationTopMenu.smali
++++ b/smali_classes2/com/android/camera2/compat/theme/common/MiThemeOperationTopMenu.smali
+@@ getCvTypeComponentDataItems(Ljava/util/List;)V
+-.method public getCvTypeComponentDataItems(Ljava/util/List;)V
+-    .locals 0
+-    return-void
++.method public getCvTypeComponentDataItems(Ljava/util/List;)V
++    .locals 4
++    new-instance v0, Lcom/android/camera/data/data/ComponentDataItem;
++    const/4 v1, -0x1
++    const v2, 0x7f120a39
++    const-string v3, "0"
++    invoke-direct {v0, v1, v1, v2, v3}, Lcom/android/camera/data/data/ComponentDataItem;-><init>(IIILjava/lang/String;)V
++    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
++    new-instance v0, Lcom/android/camera/data/data/ComponentDataItem;
++    const v2, 0x7f120a3a
++    const-string v3, "1"
++    invoke-direct {v0, v1, v1, v2, v3}, Lcom/android/camera/data/data/ComponentDataItem;-><init>(IIILjava/lang/String;)V
++    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
++    return-void
+ .end method
+
+--- a/res/values/strings.xml
++++ b/res/values/strings.xml
+@@ cv_display_title
+-    <string name="cv_display_title">cv_display_title</string>
++    <string name="cv_display_title">Leica Style</string>
++    <string name="cv_type_authentic">Leica Authentic</string>
++    <string name="cv_type_vibrant">Leica Vibrant</string>
+
+--- a/res/values/public.xml
++++ b/res/values/public.xml
+@@ after yesterday 0x7f120a38
++    <public type="string" name="cv_type_authentic" id="0x7f120a39" />
++    <public type="string" name="cv_type_vibrant" id="0x7f120a3a" />
+
+--- a/smali_classes2/com/mi/device/Common.smali
++++ b/smali_classes2/com/mi/device/Common.smali
+@@ o00OO()Z
+-.method public o00OO()Z
+-    .locals 0
+-    const/4 p0, 0x0
+-    return p0
++.method public o00OO()Z
++    .locals 0
++    const/4 p0, 0x1
++    return p0
+ .end method
+
+--- a/smali_classes2/com/android/camera2/compat/theme/common/MiThemeOperationTopMenu.smali
++++ b/smali_classes2/com/android/camera2/compat/theme/common/MiThemeOperationTopMenu.smali
+@@ getCvTypeComponentDataItems - fix icon IDs
+-    const/4 v1, -0x1
++    const v1, 0x7f08026f
+
+--- a/smali_classes2/com/android/camera2/compat/theme/common/MiThemeOperationTop.smali
++++ b/smali_classes2/com/android/camera2/compat/theme/common/MiThemeOperationTop.smali
+@@ getTopConfigBgRes(I)I
+-.method public getTopConfigBgRes(I)I
+-    .locals 0
+-    const-string p0, "_shadow"
+-    invoke-static {p1, p0}, Lcom/android/camera2/compat/theme/MiThemeCompat;->getOverlayResBySuffix(ILjava/lang/String;)I
+-    move-result p0
+-    return p0
++.method public getTopConfigBgRes(I)I
++    .locals 0
++    const/4 p0, -0x1
++    if-ne p1, p0, :cond_0
++    return p1
++    :cond_0
++    const-string p0, "_shadow"
++    invoke-static {p1, p0}, Lcom/android/camera2/compat/theme/MiThemeCompat;->getOverlayResBySuffix(ILjava/lang/String;)I
++    move-result p0
++    return p0
+ .end method
